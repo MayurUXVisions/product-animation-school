@@ -1,0 +1,171 @@
+@import "~styles/config";
+
+.image-hero {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+
+  &__sticky {
+    position: fixed;
+    width: 100%;
+  }
+
+  &__flex-center {
+    text-transform: uppercase;
+  }
+
+  &__hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__img_block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .wide_screen_img {
+      display: block;
+
+      @include r(desktop-small) {
+        display: none;
+      }
+    }
+
+    .small_desktop_img {
+      display: none;
+
+      @include r(desktop-small) {
+        display: block;
+      }
+
+      @include r(tablet-max) {
+        display: none;
+      }
+    }
+
+    .tablet_img {
+      display: none;
+
+      @include r(tablet-max) {
+        display: block;
+      }
+
+      @include r(mobile) {
+        display: none;
+      }
+    }
+
+    .mobile_img {
+      display: none;
+
+      @include r(mobile) {
+        display: block;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    padding-bottom: 58px;
+
+    @include r(desktop-small) {
+      padding-bottom: 38px;
+    }
+
+    @include r(mobile) {
+      padding-bottom: 23px;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 10px;
+
+    @include r(desktop-small) {
+      margin-bottom: 5px;
+    }
+
+    @include r(mobile) {
+      margin-bottom: 7px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+      margin-right: 12px;
+      padding: 16px 24px;
+      font-size: 24px;
+      font-weight: $f-heavy;
+      background-color: $yellow;
+
+      @include r(desktop-small) {
+        padding: 7px 15px;
+        font-size: 16px;
+      }
+
+      @include r(mobile) {
+        margin-bottom: 7px;
+        padding: 5px 10px;
+        font-size: 14px;
+        line-height: 1.1;
+      }
+    }
+  }
+
+  h1 {
+    color: $yellow;
+  }
+
+  &.blue_theme {
+    .image-hero__tags label {
+      background-color: $blue;
+    }
+
+    h1 {
+      color: $blue;
+    }
+  }
+
+  &.red_theme {
+    .image-hero__tags label {
+      background-color: $coral;
+    }
+
+    h1 {
+      color: $coral;
+    }
+  }
+
+  &.pink_theme {
+    .image-hero__tags label {
+      background-color: $pink;
+    }
+
+    h1 {
+      color: $pink;
+    }
+  }
+}
+
+.ios,
+.android {
+  .image-hero__flex {
+    @include r(mobile) {
+      padding-bottom: 100px;
+    }
+  }
+}

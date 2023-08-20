@@ -1,0 +1,79 @@
+.wp-block-table {
+  $border-spacing: 24px;
+
+  margin: 0;
+
+  @include r(mobile, tablet) {
+    overflow: scroll;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: $border-spacing 0;
+    margin-left: -$border-spacing; // negates the outer spacing on the left hand side
+  }
+
+  td {
+    position: relative;
+    vertical-align: top;
+    border: 0;
+    padding: 15px 0 30px;
+    font-size: 18px;
+    word-wrap: break-all;
+
+    @include r(mobile, tablet) {
+      min-width: 230px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $blue;
+    }
+  }
+
+  tr {
+    td {
+      &:first-child {
+        font-weight: $f-heavy;
+      }
+    }
+
+    &:last-child {
+      td {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  thead {
+    tr {
+      // Headers
+      th {
+        position: relative;
+        border-width: 3px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        font-weight: $f-heavy;
+        white-space: nowrap;
+        text-align: left;
+        text-transform: uppercase;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}

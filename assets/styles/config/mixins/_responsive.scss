@@ -1,0 +1,23 @@
+//
+// Media query mixin
+//
+// Example:
+// $breakpoints: (
+//     'mobile' '(max-width: 480px)',
+//     'tablet' '(min-width: 481px) and (max-width: 768px)'
+// );
+//
+@mixin r($queries...) {
+  @each $query in $queries {
+    @each $breakpoint in $breakpoints {
+      $name: nth($breakpoint, 1);
+      $declaration: nth($breakpoint, 2);
+
+      @if $query == $name and $declaration {
+        @media only screen and #{$declaration} {
+          @content;
+        }
+      }
+    }
+  }
+}

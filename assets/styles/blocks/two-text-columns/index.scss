@@ -1,0 +1,103 @@
+@import "~styles/config";
+
+.two-text-columns {
+  position: relative;
+  z-index: 1;
+  padding: 90px 0;
+
+  @include r(desktop-small) {
+    padding: 70px 0;
+  }
+
+  @include r(tablet-max) {
+    padding: 45px 0 25px;
+  }
+
+  &__title {
+    margin-bottom: 35px;
+
+    h2 {
+      font-weight: $f-bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    width: 50%;
+    padding-right: 125px;
+
+    @include r(laptop-max) {
+      padding-right: 55px;
+    }
+
+    @include r(tablet-max) {
+      width: 100%;
+      margin-bottom: 35px;
+      padding-right: 0;
+    }
+
+    h1 {
+      margin-top: -10px !important;
+      line-height: 1;
+    }
+
+    h2 {
+      margin-top: -5px !important;
+      line-height: 1;
+    }
+
+    h3 {
+      margin-top: 0 !important;
+      line-height: 1;
+    }
+
+    p {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: #000 !important;
+    }
+  }
+
+  &.blue_theme {
+    background-color: $blue;
+
+    a {
+      color: #000;
+    }
+  }
+
+  &.pink_theme {
+    background-color: $pink;
+
+    a {
+      color: #000;
+    }
+  }
+
+  &.yellow_theme {
+    background-color: $yellow;
+
+    a {
+      color: #000;
+    }
+  }
+
+  &.red_theme {
+    background-color: $coral;
+
+    a {
+      color: #000;
+    }
+  }
+}

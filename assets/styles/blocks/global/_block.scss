@@ -1,0 +1,17 @@
+//
+// Common styles for all blocks
+// - Padding to be set on a per-block basis
+// - Blocks should not have margin applied to them, if they do it should be removed in addition to the padding
+//   when adding the .remove-*-spacing classes
+//
+.block {
+  &.remove-top-spacing {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  &.remove-bottom-spacing {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

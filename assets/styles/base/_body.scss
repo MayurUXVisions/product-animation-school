@@ -1,0 +1,72 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include normalised-text;
+
+  margin: 0;
+  font-family: $base-font-family;
+  font-weight: $f-semibold;
+  color: $black--design;
+
+  &,
+  * {
+    font-family: $base-font-family;
+  }
+
+  // Helper class
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+
+  //
+  // Dark overlay that can be used by different components/blocks to darken the background (i.e. modals, menus...)
+  //
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($black, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 400ms, visibility 400ms;
+  }
+
+  &.show-overlay {
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+._brlbs-responsive-table {
+  text-align: left;
+}
+
+.BorlabsCookie {
+  padding: 25px 0;
+
+  th,
+  td {
+    vertical-align: baseline;
+    padding: 0 15px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}

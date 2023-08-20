@@ -1,0 +1,543 @@
+.blue_bg {
+  background-color: $blue;
+}
+
+.red_bg {
+  background-color: $coral;
+}
+
+.yellow_bg {
+  background-color: $yellow;
+}
+
+.pink_bg {
+  background-color: $pink;
+}
+
+.black_bg {
+  background-color: $black--design;
+}
+
+.purple_bg {
+  background-color: $purple;
+}
+
+.remove-top-padding {
+  padding-top: 0 !important;
+}
+
+.remove-bottom-padding {
+  padding-bottom: 0 !important;
+}
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+.overlay-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+}
+
+body {
+  .gform_wrapper {
+    &.gravity-theme {
+      .ginput_complex {
+        span {
+          @include r(mobile) {
+            margin-bottom: 22px;
+          }
+        }
+      }
+
+      .gfield {
+        margin-bottom: 37px;
+      }
+
+      .gfield--type-textarea,
+      .gfield--type-checkbox {
+        margin-bottom: 20px !important;
+      }
+
+      .gform_fields {
+        grid-row-gap: 0;
+
+        @include r(desktop-small) {
+          grid-row-gap: 18px;
+        }
+
+        @include r(mobile) {
+          grid-row-gap: 3px;
+        }
+      }
+
+      .gform_footer {
+        max-width: 90px;
+        margin: -42px 0 0;
+        padding: 0;
+
+        @include r(mobile) {
+          margin: 20px 0 0;
+        }
+      }
+
+      .gfield-choice-input + label {
+        display: flex !important;
+        align-items: center;
+        vertical-align: middle !important;
+        margin-bottom: 0;
+      }
+
+      .gfield--type-consent {
+        @include checkbox;
+
+        .gform-field-label {
+          display: flex !important;
+          align-items: center;
+          vertical-align: middle !important;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    form {
+      .gform-body {
+        .gfield {
+          @include r(mobile) {
+            margin-bottom: 24px;
+          }
+
+          &.gfield--type-name {
+            @include r(mobile) {
+              margin-bottom: 0;
+            }
+          }
+
+          .gform-field-label {
+            font-size: 18px;
+
+            @include r(desktop-small) {
+              font-size: 14px;
+            }
+
+            @include r(mobile) {
+              margin: 0;
+              font-size: 12px;
+            }
+          }
+
+          input[type="text"],
+          input[type="email"],
+          input[type="tel"],
+          input[type="password"],
+          input[type="number"],
+          input[type="url"],
+          input[type="file"],
+          select,
+          textarea {
+            height: 35px;
+            border: 0;
+            border-bottom: 1px solid rgb(32 31 37 / 20%);
+            margin: 6px 0 0;
+            padding: 0 4px;
+            font-size: 18px;
+            color: $black--design;
+            background-color: transparent;
+
+            @include r(desktop-small) {
+              height: 31px;
+              margin: 0;
+              font-size: 14px;
+            }
+
+            @include r(mobile) {
+              height: 26px;
+              min-height: unset !important;
+              padding: 0;
+              font-size: 12px;
+            }
+
+            &::placeholder {
+              color: $black--design !important;
+              opacity: 0.6 !important;
+            }
+          }
+
+          textarea {
+            border: 0;
+            margin: 0;
+            padding: 21px 13px;
+            background-color: rgb(255 255 255 / 40%);
+
+            @include r(desktop-small) {
+              height: 192px !important;
+            }
+          }
+
+          .ginput_container_checkbox {
+            .gchoice {
+              @include checkbox;
+            }
+          }
+
+          .ginput_container_radio {
+            .gchoice {
+              margin: 0 0 5px;
+
+              input[type="radio"] {
+                display: none;
+                width: initial;
+                height: initial;
+                margin-bottom: 0;
+                padding: 0;
+                cursor: pointer;
+              }
+
+              label {
+                position: relative;
+                cursor: pointer;
+              }
+
+              label::before {
+                content: "";
+                position: relative;
+                top: 0;
+                display: inline-block;
+                vertical-align: middle;
+                border: 2px solid $black--design;
+                border-radius: 2px;
+                border-radius: 100%;
+                margin-right: 20px;
+                padding: 7px;
+                background-color: transparent;
+                cursor: pointer;
+                appearance: none;
+
+                @include r(desktop-small) {
+                  margin-right: 10px;
+                }
+              }
+
+              input[type="radio"]:checked + label::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 5px;
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                margin: auto;
+                background-color: $black--design;
+              }
+            }
+          }
+
+          &.gfield_html {
+            font-size: 12px;
+            font-weight: $f-semibold;
+            line-height: 1.35em;
+          }
+        }
+      }
+
+      .gform_footer {
+        position: relative;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
+
+        &::after {
+          top: auto !important;
+          background-color: $yellow;
+
+          @include button-style-after;
+        }
+
+        &::before {
+          top: auto !important;
+          width: 30px !important;
+          background-color: $yellow;
+
+          @include button-style-before;
+        }
+
+        &:hover {
+          @include button-style-hover;
+        }
+
+        @include r(tablet-max) {
+          justify-content: flex-start;
+        }
+
+        .gform_button {
+          position: relative;
+          width: auto;
+          min-height: auto !important;
+          border: 0;
+          padding: 0;
+          font-family: $proxima;
+          font-size: 24px;
+          font-weight: $f-heavy;
+          line-height: normal !important;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $black--design;
+          background-color: transparent;
+          cursor: pointer;
+
+          @include r(desktop-wide) {
+            font-size: 24px;
+          }
+
+          @include r(mobile) {
+            padding-bottom: 2px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.site-footer .gform_footer.before {
+  display: none !important;
+}
+
+.gform_wrapper.gravity-theme .gfield_consent_description,
+.gform_wrapper.gravity-theme .field_description_below .gfield_consent_description {
+  width: 100% !important;
+  max-height: initial !important;
+  overflow-y: auto !important;
+  border: 0 !important;
+  margin-top: 12.8px !important;
+  padding: 0 !important;
+  font-size: 13.008px !important;
+}
+
+.gfield--type-captcha {
+  margin-bottom: 0 !important;
+}
+
+.gravity-theme form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  @include r(mobile) {
+    justify-content: flex-start;
+  }
+
+  .gform-body.gform_body {
+    width: 100%;
+  }
+}
+
+// ul,
+// ol {
+//   padding: 0 0 1px 24px;
+
+//   li {
+//     margin: 0 0 15px;
+
+//     @include r(desktop) {
+//       margin: 0 0 12px;
+//     }
+
+//     @include r(mobile-small) {
+//       margin: 0 0 10px;
+//     }
+//   }
+// }
+
+blockquote {
+  margin: 0 0 30px;
+  padding: 35px 35px 15px;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: #edf22d;
+
+  @include r(mobile-max) {
+    padding: 25px 25px 9px;
+  }
+
+  p {
+    margin-bottom: 15px !important;
+    font-size: 18px !important;
+    font-weight: 800;
+
+    @include r(mobile) {
+      font-size: 14px !important;
+    }
+  }
+}
+
+ul.has-yellow-color {
+  li::before {
+    background-color: $yellow !important;
+  }
+}
+
+ul.has-red-color {
+  li::before {
+    background-color: $coral !important;
+  }
+}
+
+ul.has-pink-color {
+  li::before {
+    background-color: $pink !important;
+  }
+}
+
+ul.has-blue-color {
+  li::before {
+    background-color: $blue !important;
+  }
+}
+
+ul.has-purple-color {
+  li::before {
+    background-color: $purple !important;
+  }
+}
+
+ul.has-green-color {
+  li::before {
+    background-color: $dark--green !important;
+  }
+}
+
+ul.has-white-color {
+  li::before {
+    background-color: $white !important;
+  }
+}
+
+.container--1920 {
+  .container--1920 {
+    padding: 0;
+  }
+}
+
+/* Select Box Style */
+.single_post .container-block .container {
+  background-color: transparent !important;
+}
+
+.ginput_container_select {
+  position: relative;
+  font-family: $proxima;
+}
+
+.ginput_address_country {
+  position: relative;
+  font-family: $proxima;
+}
+
+.ginput_address_country select {
+  display: none; /* hide original SELECT element: */
+}
+
+.ginput_container_select select {
+  display: none; /* hide original SELECT element: */
+}
+
+.ginput_address_country .select-items {
+  max-height: 212px;
+  overflow-y: scroll;
+  margin-left: 1.9804%;
+  margin-right: 1.9804%;
+}
+
+.select-selected {
+  border: 1px solid rgb(32 31 37 / 20%) !important;
+  font-family: $proxima;
+  font-size: 18px;
+  background-color: $blue;
+
+  @include r(mobile) {
+    font-size: 12px;
+  }
+}
+
+/* style the arrow inside the select element: */
+.select-selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 14px;
+  width: 15px;
+  height: 12px;
+  margin: auto;
+  background-image: url("~img/down-arrow.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px;
+
+  @include r(mobile) {
+    background-size: 12px;
+  }
+}
+
+/* point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active::after {
+  top: 0;
+  border-color: transparent transparent $white transparent;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  position: relative;
+  min-height: 42px;
+  border-color: transparent transparent rgb(0 0 0 / 10%) transparent;
+  padding: 8px 16px;
+  color: $dark--green;
+  cursor: pointer;
+  user-select: none;
+
+  @include r(mobile) {
+    padding: 5px 13px;
+    font-size: 12px;
+  }
+}
+
+.gform_wrapper form .gform-body .gfield input[type="file"] {
+  padding-left: 0;
+  font-size: 16px;
+  line-height: 1em;
+}
+
+/* style items (options): */
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border: 1px solid rgb(32 31 37 / 20%) !important;
+  margin-top: -1px;
+  background-color: $blue;
+}
+
+/* hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover {
+  background-color: rgb(255 255 255 / 40%);
+}
+
+.same-as-selected {
+  background-color: $white;
+}

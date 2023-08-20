@@ -1,0 +1,9 @@
+@mixin object-fit($type) {
+  object-fit: $type;
+  font-family: 'object-fit: #{$type};'; /* stylelint-disable-line */
+}
+
+@mixin object-position($type) {
+  object-position: $type;
+  font-family: 'object-position: #{$type};'; /* stylelint-disable-line */
+}

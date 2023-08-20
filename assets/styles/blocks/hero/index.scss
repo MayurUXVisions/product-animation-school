@@ -1,0 +1,238 @@
+@import "~styles/config";
+
+.hero_section {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+
+  @include r(tablet) {
+    height: 530px;
+  }
+
+  &__inner {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+
+    @include r(tablet) {
+      height: 530px;
+    }
+  }
+
+  .column_1 {
+    .hero_section__box__caption {
+      h1 {
+        @include r(mobile) {
+          max-width: 198px;
+        }
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    width: 50%;
+
+    @include r(mobile) {
+      width: 100%;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100vh;
+
+      @include r(tablet) {
+        height: 530px;
+      }
+
+      @include r(mobile) {
+        height: 50vh;
+      }
+
+      img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+
+        @include r(tablet) {
+          height: 530px;
+        }
+
+        @include r(mobile) {
+          height: 50vh;
+        }
+      }
+    }
+
+    &__caption {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0 54px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $yellow;
+
+      @include r(desktop-wide) {
+        bottom: 60px;
+      }
+
+      @include r(desktop) {
+        padding: 0 16px;
+      }
+
+      @include r(tablet) {
+        padding: 0 26px;
+      }
+
+      @include r(mobile) {
+        bottom: 29px;
+      }
+
+      h3,
+      .h3 {
+        max-width: 850px;
+        line-height: 1em;
+        text-transform: uppercase;
+        color: $yellow;
+
+        @include r(desktop-wide) {
+          max-width: 540px;
+        }
+
+        @include r(desktop) {
+          font-size: 32px;
+        }
+
+        @include r(tablet) {
+          font-size: 20px;
+        }
+
+        @include r(mobile) {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  &__tagline {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 44.15%;
+    padding: 15px 24px 22px 29px;
+    font-size: 34px;
+    color: $white;
+    background-color: $black--design;
+
+    @include r(desktop-max) {
+      bottom: 3%;
+      right: 3%;
+      font-size: 28px;
+    }
+
+    @include r(desktop-wide) {
+      padding: 11px 24px 17px 18px;
+      font-size: 22px;
+    }
+
+    @include r(tablet) {
+      font-size: 16px;
+    }
+
+    @include r(mobile-max) {
+      font-size: 12px;
+    }
+
+    @include r(mobile) {
+      bottom: 12px;
+      left: 6%;
+      right: auto;
+      width: 89%;
+      padding: 6px 7px 7px 5px;
+      font-size: 14px;
+    }
+
+    strong {
+      font-family: $proxima;
+      font-weight: $f-heavy;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.22em;
+
+      @include r(desktop-wide) {
+        font-size: 28px;
+        line-height: 25px;
+      }
+
+      @include r(desktop) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      @include r(mobile-max) {
+        font-size: 12px;
+        line-height: 17px;
+      }
+
+      @include r(mobile) {
+        font-size: 14px;
+      }
+    }
+
+    .link-btn {
+      margin: 0 0 7px;
+      font-size: 34px;
+
+      @include r(desktop-max) {
+        font-size: 28px;
+      }
+
+      @include r(desktop-wide) {
+        font-size: 20px;
+      }
+
+      @include r(desktop) {
+        padding-bottom: 3px;
+        font-size: 14px;
+      }
+
+      @include r(mobile-max) {
+        font-size: 13px;
+      }
+
+      @include r(mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.ios,
+.android {
+  .column_2 {
+    .h3 {
+      @include r(mobile) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

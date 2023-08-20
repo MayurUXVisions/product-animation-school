@@ -1,0 +1,279 @@
+@import "~styles/config";
+
+.multiple-image-text {
+  position: relative;
+  z-index: 1;
+  padding: 117px 0;
+  color: $white;
+  background-color: $black--design;
+
+  @include r(desktop-max) {
+    padding: 80px 0;
+  }
+
+  @include r(desktop-small) {
+    padding: 65px 0 85px;
+  }
+
+  @include r(laptop-max) {
+    padding: 65px 0;
+  }
+
+  @include r(mobile) {
+    padding: 45px 0;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 47%;
+    padding-right: 85px;
+
+    @include r(desktop-wide) {
+      padding-right: 45px;
+    }
+
+    @include r(desktop-small) {
+      padding-right: 6%;
+    }
+
+    @include r(laptop-max) {
+      padding-right: 0;
+    }
+
+    @include r(tablet-max) {
+      width: 100%;
+      margin-bottom: 54px;
+    }
+
+    h4 {
+      font-weight: $f-semibold;
+      color: $white;
+    }
+
+    .link-btn {
+      display: inline-block;
+      margin-bottom: 65px;
+
+      @include r(laptop-max) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__desktop {
+    display: block;
+
+    @include r(tablet-max) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include r(tablet-max) {
+      display: block;
+    }
+
+    @include r(mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__repeater {
+    margin-bottom: 61px;
+
+    @include r(desktop-wide) {
+      margin-bottom: 71px;
+    }
+
+    @include r(laptop-max) {
+      margin-bottom: 40px;
+    }
+
+    &:first-child {
+      margin-bottom: 111px;
+
+      @include r(desktop-wide) {
+        margin-bottom: 78px;
+      }
+
+      @include r(laptop-max) {
+        margin-bottom: 48px;
+      }
+
+      @include r(mobile) {
+        margin-bottom: 52px;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h6 {
+      margin-bottom: 35px;
+      text-transform: uppercase;
+      color: $white;
+    }
+
+    h5 {
+      margin-top: -6px;
+      margin-bottom: 29px;
+      font-weight: $f-bold;
+      text-transform: uppercase;
+      color: $white;
+
+      @include r(desktop-small) {
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+
+      @include r(laptop-max) {
+        margin-top: 0;
+      }
+
+      @include r(mobile) {
+        margin-bottom: 18px;
+      }
+    }
+
+    p {
+      font-weight: $f-semibold;
+      line-height: 1.2;
+
+      @include r(desktop-wide) {
+        font-size: 16px;
+      }
+
+      @include r(mobile-max) {
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      @include r(mobile) {
+        margin-bottom: 19px;
+      }
+    }
+  }
+
+  &__sidebar {
+    width: 48%;
+
+    @include r(tablet-max) {
+      width: 100%;
+    }
+  }
+
+  &__sidebar-img {
+    margin-bottom: 72px;
+
+    @include r(desktop-wide) {
+      margin-bottom: 52px;
+    }
+
+    @include r(mobile) {
+      margin-bottom: 16px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &.yellow-theme {
+    .multiple-image-text__repeater h5 {
+      color: $yellow;
+    }
+
+    .multiple-image-text__repeater a {
+      color: $yellow;
+    }
+
+    .link-btn::after,
+    .link-btn::before {
+      background-color: $yellow;
+    }
+
+    h1,
+    h2,
+    h3,
+    h6 {
+      color: $yellow;
+    }
+  }
+
+  &.blue-theme {
+    .multiple-image-text__repeater h5 {
+      color: $blue;
+    }
+
+    .multiple-image-text__repeater a {
+      color: $blue;
+    }
+
+    .link-btn::after,
+    .link-btn::before {
+      background-color: $blue;
+    }
+
+    h1,
+    h2,
+    h3,
+    h6 {
+      color: $blue;
+    }
+  }
+
+  &.red-theme {
+    .multiple-image-text__repeater h5 {
+      color: $coral;
+    }
+
+    .multiple-image-text__repeater a {
+      color: $coral;
+    }
+
+    .link-btn::after,
+    .link-btn::before {
+      background-color: $coral;
+    }
+
+    h1,
+    h2,
+    h3,
+    h6 {
+      color: $coral;
+    }
+  }
+
+  &.pink-theme {
+    .multiple-image-text__repeater h5 {
+      color: $pink;
+    }
+
+    .multiple-image-text__repeater a {
+      color: $pink;
+    }
+
+    .link-btn::after,
+    .link-btn::before {
+      background-color: $pink;
+    }
+
+    h1,
+    h2,
+    h3,
+    h6 {
+      color: $pink;
+    }
+  }
+}

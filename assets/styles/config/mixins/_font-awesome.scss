@@ -1,0 +1,16 @@
+//
+// Renders icon as pseudo-content
+//
+// Read more: https://fontawesome.com/v5/docs/web/advanced/css-pseudo-elements
+//
+@mixin font-awesome-render-unicode-icon($unicode: "\f178") {
+  content: $unicode;
+  display: inline-block;
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
+  font-family: "Font Awesome 6 Pro";
+  /* stylelint-enable font-family-no-missing-generic-family-keyword */
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}

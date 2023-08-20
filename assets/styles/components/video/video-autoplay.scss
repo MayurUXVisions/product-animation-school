@@ -1,0 +1,76 @@
+@import "~styles/config";
+
+.video-autoplay {
+  $root: &;
+
+  position: relative;
+
+  &__iframe-wrapper,
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; // Landscape aspect ratio
+
+    img,
+    iframe {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    img {
+      @include object-fit(cover);
+
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      height: 100%;
+      pointer-events: none;
+    }
+  }
+
+  &__image-wrapper {
+    z-index: 0;
+  }
+
+  &__iframe-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 150ms;
+  }
+
+  // By default block behaves as if no mobile version exists, but if it does then it will
+  // change appearance accordingly (aspect ratio changes to portrait)
+  &.is-responsive {
+    #{$root}__image-wrapper {
+      .mobile {
+        display: none;
+      }
+
+      @include r(mobile) {
+        .desktop { display: none; }
+
+        .mobile { display: block; }
+      }
+    }
+
+    @include r(mobile) {
+      #{$root}__iframe-wrapper,
+      #{$root}__image-wrapper {
+        padding-top: 177%; // Portrait aspect ratio (16 / 9 * 100 = 177)
+      }
+    }
+  }
+}

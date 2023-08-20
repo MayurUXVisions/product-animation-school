@@ -1,0 +1,236 @@
+@import "~styles/config";
+
+.image-text-block {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  padding: 80px 0 168px;
+  background-color: $black--design;
+
+  @include r(desktop-wide) {
+    padding: 70px 0;
+  }
+
+  @include r(mobile) {
+    padding: 40px 0 57px;
+  }
+
+  &__full {
+    p,
+    li {
+      max-width: 100% !important;
+    }
+  }
+
+  &__title {
+    max-width: 747px;
+    padding: 0 0 60px 5px;
+
+    @include r(desktop-wide) {
+      max-width: 617px;
+      padding-bottom: 33px;
+    }
+
+    @include r(mobile) {
+      padding-left: 0;
+    }
+
+    h2 {
+      font-size: 48px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: $white;
+
+      @include r(desktop-wide) {
+        font-size: 39px;
+      }
+
+      @include r(mobile-max) {
+        font-size: 30px;
+        line-height: 34px;
+      }
+    }
+  }
+
+  &__two_col {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__left {
+      width: 50%;
+
+      @include r(tablet-max) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__right {
+      position: relative;
+      width: 50%;
+      margin: -6px 0 0;
+      padding: 0 56px 60px;
+
+      @include r(laptop-max) {
+        padding: 0 46px 30px;
+      }
+
+      @include r(tablet-max) {
+        width: 100%;
+        margin: 0;
+        padding: 30px 0 40px;
+      }
+
+      @include r(mobile) {
+        padding: 25px 0 61px;
+      }
+
+      h2,
+      h3,
+      h4 {
+        margin: 0 0 78px;
+        letter-spacing: -0.005em;
+        color: $white;
+
+        @include r(desktop-max) {
+          margin: 0 0 42px;
+        }
+
+        @include r(desktop-wide) {
+          margin: 0 0 53px;
+        }
+
+        @include r(laptop-max) {
+          margin: 0 0 33px;
+        }
+
+        @include r(mobile) {
+          margin-bottom: 44px;
+        }
+      }
+
+      h4 {
+        @include r(desktop-wide) {
+          font-size: 22px;
+          line-height: 1.2;
+        }
+
+        @include r(mobile-max) {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+
+      ul,
+      ol {
+        padding-left: 26px;
+
+        li {
+          margin-bottom: 17px;
+
+          @include r(mobile) {
+            margin-bottom: 8px;
+          }
+        }
+      }
+
+      p,
+      li {
+        max-width: 441px;
+        margin: 0 0 30px;
+        color: $white;
+
+        @include r(desktop-wide) {
+          font-size: 16px;
+        }
+
+        @include r(desktop-wide) {
+          max-width: 300px;
+          margin: 0 0 23px;
+        }
+
+        @include r(tablet-max) {
+          max-width: 100%;
+        }
+
+        @include r(mobile-max) {
+          font-size: 16px;
+          line-height: 18px;
+        }
+
+        @include r(mobile) {
+          max-width: 87%;
+        }
+
+        a {
+          color: inherit;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .link-btn {
+        position: absolute;
+        bottom: 6px;
+
+        @include r(mobile-small) {
+          max-width: 250px;
+        }
+
+        &.blue-btn {
+          &::after {
+            background-color: $blue;
+          }
+
+          &::before {
+            background-color: $blue;
+          }
+        }
+
+        &.red-btn {
+          &::after {
+            background-color: $coral;
+          }
+
+          &::before {
+            background-color: $coral;
+          }
+        }
+
+        &.pink-btn {
+          &::after {
+            background-color: $pink;
+          }
+
+          &::before {
+            background-color: $pink;
+          }
+        }
+      }
+    }
+  }
+}
+
+.image_block_align_right {
+  .image-text-block__two_col__right {
+    @media only screen and (min-width: 1023px) {
+      order: 1;
+      padding-left: 0;
+    }
+  }
+
+  .image-text-block__two_col__left {
+    @media only screen and (min-width: 1023px) {
+      order: 2;
+    }
+  }
+}

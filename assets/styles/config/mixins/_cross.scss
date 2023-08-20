@@ -1,0 +1,32 @@
+@mixin cross($size: 20px, $color: currentColor, $thickness: 1px) {
+  width: $size;
+  height: $size;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(($size - $thickness) / 2);
+    left: 0;
+    right: 0;
+    height: $thickness;
+    border-radius: $thickness;
+    background: $color;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  span {
+    display: block;
+  }
+}

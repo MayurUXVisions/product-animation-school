@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// Colours
+// -----------------------------------------------------------------------------
+$black: #000;
+$black--design: #201f25;
+$blue: #72d8d8;
+$yellow: #edf22d;
+$coral: #f2685b;
+$purple: #492159;
+$pink: #ffd5e2;
+$white: #fff;
+$grey--light: #a6b5bd;
+$white--off: #f2f5f0;
+$gold: #c3a86a;
+$dark--green: #002e2e;
+
+// -----------------------------------------------------------------------------
+// Responsive breakpoints
+// -----------------------------------------------------------------------------
+$breakpoints: (
+  "ultrawide"       "(min-width: 1920px)",
+  "desktop-max"     "(max-width: 1840px)",
+  "desktop-min"     "(min-width: 1650px) and (max-width: 1840px)",
+  "desktop-wide"    "(max-width: 1590px)",
+  "desktop-small"   "(max-width: 1439px)",
+  "desktop"         "(max-width: 1360px)", // 13/14" Macbooks and similar
+  "laptop-max"      "(max-width: 1279px)",
+  "laptop"          "(min-width: 834px) and (max-width: 1279px)", // Small desktop from the design
+  "tablet-min"      "(min-width: 1023px)",
+  "tablet-max"      "(max-width: 1023px)",
+  "tablet"          "(min-width: 600px) and (max-width: 1024px)", // Small tablet/phablet design
+  "mobile-max"      "(max-width: 767px)",
+  "mobile-pro"      "(max-width: 740px)",
+  "mobile"          "(max-width: 599px)",
+  "mobile-small"    "(max-width: 480px)",
+);
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+// Fonts
+$opensans: "Open Sans", sans-serif;
+$montserrat: "Montserrat", sans-serif;
+$proxima: "proxima-nova", sans-serif;
+
+// Base rules
+$base-font-size: 16px;
+$baseline: 24px;
+$base-line-height: $baseline;
+$base-font-family: $proxima;
+
+// Normalised text properties (for @include normalised-text)
+$normalised-text-properties: (
+  "font-family",
+  "font-size",
+  "line-height"
+);
+
+// Normalised text values (for @include normalised-text)
+$normalised-text-values: (
+  $base-font-family,
+  $base-font-size,
+  $base-line-height
+);
+
+// Font Weights
+$f-light: 300;
+$f-regular: 400;
+$f-medium: 500;
+$f-semibold: 600;
+$f-bold: 700;
+$f-heavy: 800;
+
+// -----------------------------------------------------------------------------
+// LAYOUT
+// -----------------------------------------------------------------------------
+
+// Content Widths
+$cw-ultrawide: 1920px;
+$cw-desktop: 1370px;
+$cw-mobile: 335px;
+
+// Gutters
+$g-desktop: 5vw;
+$g-tablet: 5vw;
+$g-mobile: 5vw;
+
+// Z-indexes
+$z-index-header-nav: 99;
+$z-index-page-loading-spinner: 95;
+
+// -----------------------------------------------------------------------------
+// Animation Transition
+// -----------------------------------------------------------------------------
+$a-short: 0.3s;
+$a-medium: 0.5s;
+$a-long: 1s;

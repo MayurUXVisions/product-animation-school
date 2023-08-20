@@ -1,0 +1,358 @@
+.container-block {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  overflow: hidden; // Allows any background color to be applied to the space defined by .block margin
+  margin-top: -1px;
+  padding: 90px 0;
+
+  @include r(desktop-wide) {
+    padding: 62px 0;
+  }
+
+  @include r(tablet-max) {
+    padding: 50px 0;
+  }
+
+  h2 {
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    margin-bottom: 41px;
+
+    @include r(desktop-small) {
+      margin-bottom: 30px;
+    }
+
+    @include r(tablet-max) {
+      margin-bottom: 27px;
+    }
+  }
+
+  .block {
+    margin-bottom: 0;
+  }
+
+  .container--1920 {
+    margin: 0 auto;
+  }
+
+  .container--1024 {
+    max-width: 1024px;
+    padding: 0;
+  }
+
+  .container--768 {
+    max-width: 768px;
+    padding: 0;
+  }
+
+  .container--320 {
+    max-width: 320px;
+    padding: 0;
+  }
+
+  &.alignment_center_text {
+    .container--1920 {
+      .container--1280 {
+        margin: 0 0 0 16% !important;
+        padding-left: 0;
+
+        @include r(desktop-small) {
+          margin: 0 0 0 16% !important;
+          padding-left: 0;
+        }
+
+        @include r(tablet) {
+          margin: 0 !important;
+          padding-left: 90px;
+        }
+
+        @include r(mobile) {
+          padding-left: 20px;
+        }
+      }
+
+      >div[class*="container--"] {
+        margin: 0 !important;
+        padding-left: 16%;
+
+        @include r(tablet) {
+          padding-left: 90px;
+        }
+
+        @include r(mobile) {
+          padding-left: 20px;
+        }
+      }
+    }
+
+    .container--1024 {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .container--768 {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .container--320 {
+      max-width: 320px;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  .container--1280 {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &.alignment_left_indented {
+    >div[class*="container--"] {
+      padding-left: 8%;
+
+      @include r(tablet) {
+        padding-left: 70px;
+      }
+
+      @include r(mobile) {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &.alignment_left,
+  &.alignment_left_indented {
+    .container--1280 {
+      margin: 0;
+    }
+
+    .container--1920 {
+      margin: 0 auto;
+
+      div[class*="container--"] {
+        margin: 0;
+      }
+    }
+  }
+}
+
+mark.has-inline-color {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 12px 18px;
+
+  /* color: $black--design; */
+
+  @include r(desktop-wide) {
+    padding: 12px 18px;
+  }
+
+  @include r(laptop-max) {
+    padding: 6px 12px;
+  }
+
+  @include r(mobile) {
+    padding: 4px 10px;
+  }
+}
+
+.has-background {
+  display: inline-block;
+  padding: 13px 32px;
+
+  @include r(desktop-wide) {
+    padding: 13px 19px;
+  }
+
+  @include r(laptop-max) {
+    padding: 7px 13px;
+  }
+
+  @include r(mobile) {
+    padding: 11px 16px;
+  }
+}
+
+.has-red-color {
+  color: $coral;
+}
+
+.has-yellow-color {
+  color: $yellow;
+}
+
+.has-pink-color {
+  color: $pink;
+}
+
+.has-blue-color {
+  color: $blue;
+}
+
+.has-purple-color {
+  color: $purple;
+}
+
+.has-green-color {
+  color: $dark--green;
+}
+
+.has-black-color {
+  color: $black--design;
+}
+
+.has-white-color {
+  color: $white;
+}
+
+.has-red-background-color {
+  background-color: $coral;
+}
+
+.has-yellow-background-color {
+  background-color: $yellow;
+}
+
+.has-pink-background-color {
+  background-color: $pink;
+}
+
+.has-blue-background-color {
+  background-color: $blue;
+}
+
+.has-purple-background-color {
+  background-color: $purple;
+}
+
+.has-green-background-color {
+  background-color: $dark--green;
+}
+
+.has-black-background-color {
+  background-color: $black--design;
+}
+
+.has-white-background-color {
+  background-color: $white;
+}
+
+.font-24 {
+  p,
+  li {
+    font-size: 24px;
+    font-weight: $f-semibold;
+    line-height: 1.2;
+
+    @include r(desktop-wide) {
+      font-size: 16px;
+    }
+
+    @include r(mobile-max) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
+
+* {
+  outline: 0;
+}
+
+// Please don't use target global elements
+// a {
+//   color: #fff;
+// }
+
+.font-34 {
+  p {
+    font-size: 34px;
+    font-weight: $f-semibold;
+    line-height: 1.2;
+
+    @include r(desktop-max) {
+      font-size: 28px;
+    }
+
+    @include r(desktop-wide) {
+      font-size: 24px;
+    }
+
+    @include r(desktop-small) {
+      font-size: 16px;
+    }
+
+    @include r(mobile-max) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
+
+.gform_confirmation_wrapper {
+  margin-top: 35px !important;
+}
+
+.gform_wrapper.gravity-theme [aria-invalid="true"] + label,
+.gform_wrapper.gravity-theme label + [aria-invalid="true"],
+.gform_wrapper.gravity-theme .gfield_error legend,
+.gform_wrapper.gravity-theme .gfield_error label,
+.gform_wrapper.gravity-theme .gfield_error .gfield_repeater_cell label,
+.gform_wrapper.gravity-theme .gfield_validation_message,
+.gform_wrapper.gravity-theme .validation_message {
+  color: $black--design !important;
+}
+
+.gform_wrapper.gravity-theme .gform_validation_errors {
+  border: 0 !important;
+  padding: 6px 0 !important;
+  text-align: left !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.gform_wrapper.gravity-theme .gform_validation_errors > h2.hide_summary {
+  margin: 0 !important;
+  font-size: 16px !important;
+  color: #f43a3a !important;
+
+  @include r(mobile) {
+    font-size: 14px !important;
+  }
+}
+
+.gform_wrapper.gravity-theme .gfield_validation_message,
+.gform_wrapper.gravity-theme .validation_message {
+  border: 0 !important;
+  padding: 0 !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #f43a3a !important;
+  background: none !important;
+
+  @include r(mobile) {
+    font-size: 14px !important;
+  }
+}
+
+.gfield--type-submit {
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -30px;
+    width: 17px;
+    margin: auto;
+    margin-left: 10px;
+  }
+}
+

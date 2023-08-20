@@ -1,0 +1,27 @@
+//
+// Remove default styles from `<button>` elements.
+//
+// 1. Remove extra height from `<button>` elements in Firefox.
+//
+@mixin btn-reset {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+
+  * {
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &::-moz-focus-inner {
+    border: 0; // [1]
+    padding: 0; // [1]
+  }
+}

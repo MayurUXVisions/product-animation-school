@@ -1,0 +1,166 @@
+/*
+--- Animations!!! ---
+-- Slider
+-- Squeeze
+-- Arrow Left
+-- Arrow Right
+
+How to use:
+
+Have this in it's own file e.g. _hamburger.scss
+@include h('cross', 25px, 20px, #fff, 2px, 2px, 0.3s);
+
+Parameters:
+@include h(AnimationType, Width, Height, Colour, Border Radius, Thickness, Transition Speed);
+
+*/
+@mixin hamburger(
+  $type: "cross",
+  $width: 25px,
+  $height: 15px,
+  $colour: $black,
+  $border-radius: 0,
+  $thickness: 2px,
+  $transition: $a-short,
+  $space: ($height / 2) - $thickness
+) {
+  .hamburger {
+    position: relative;
+    display: none;
+    width: $width;
+    height: $height;
+    transition: opacity $a-short;
+    cursor: pointer;
+    all: unset;
+
+    $active: #{&}--active;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @include r(tablet, mobile) {
+      display: block;
+    }
+
+    @if (
+      $type == "cross" or
+      $type == "arrow-left" or
+      $type == "arrow-right" or
+      $type == "squeeze"
+    ) {
+      &--active {
+        height: round(sqrt(strip-unit($width * $width) / 2 * 1px)) + 1;
+      }
+    }
+
+    @if round($space) != $space {
+      $space: (($height + 1) / 2) - $thickness;
+    }
+
+    > * {
+      width: $width;
+      margin: auto;
+
+      @if $type == "cross" {
+        @at-root #{$active}#{&} {
+          transform: rotate(45deg);
+        }
+      } @else if $type == "squeeze" {
+        transition-duration: 75ms;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+        @at-root #{$active}#{&} {
+          transform: rotate(45deg);
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition-delay: 0.12s;
+        }
+      }
+
+      &,
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        height: $thickness;
+        border-radius: $border-radius;
+        background-color: $colour;
+        transition: all $transition;
+        pointer-events: none;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        left: 0;
+        width: $width;
+      }
+
+      &::before {
+        top: -#{$space};
+
+        @if $type == "cross" {
+          @at-root #{$active}#{&} {
+            top: 0;
+            opacity: 0;
+          }
+        } @else if $type == "arrow-left" {
+          @at-root #{$active}#{&} {
+            transform: translate3d(-8px, 0, 0) rotate(-45deg) scaleX(0.7);
+          }
+        } @else if $type == "squeeze" {
+          transition: top 75ms ease 0.12s, opacity 75ms ease;
+
+          @at-root #{$active}#{&} {
+            top: 0;
+            width: $width;
+            opacity: 0;
+            transition:
+              top 75ms ease,
+              opacity 75ms cubic-bezier(0.4, 0, 1, 1) 0.12s;
+          }
+        } @else if $type == "arrow-right" {
+          @at-root #{$active}#{&} {
+            transform: translate3d(8px, 0, 0) rotate(45deg) scaleX(0.7);
+          }
+        }
+      }
+
+      &::after {
+        bottom: -#{$space};
+
+        @if $type == "cross" {
+          @at-root #{$active}#{&} {
+            bottom: 0;
+            transform: rotate(-90deg);
+          }
+        } @else if $type == "arrow-left" {
+          @at-root #{$active}#{&} {
+            transform: translate3d(-8px, 0, 0) rotate(45deg) scaleX(0.7);
+          }
+        } @else if $type == "arrow-right" {
+          @at-root #{$active}#{&} {
+            transform: translate3d(8px, 0, 0) rotate(-45deg) scaleX(0.7);
+          }
+        } @else if $type == "squeeze" {
+          transition:
+            bottom 75ms ease 0.12s,
+            transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+          @at-root #{$active}#{&} {
+            bottom: 0;
+            width: $width;
+            transform: rotate(-90deg);
+            transition:
+              bottom 75ms ease,
+              transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin h($args...) {
+  @include hamburger($args...);
+}

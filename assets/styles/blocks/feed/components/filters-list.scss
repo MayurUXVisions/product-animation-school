@@ -1,0 +1,371 @@
+@import "~styles/config";
+
+.filters-list {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 55px;
+  padding-bottom: 10px;
+  gap: 25px;
+
+  @include r(tablet) {
+    max-width: none;
+    margin-bottom: 50px;
+  }
+
+  @include r(mobile) {
+    max-width: none;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    label {
+      font-size: 14px;
+    }
+  }
+
+  label {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: $f-heavy;
+    text-transform: uppercase;
+
+    @include r(tablet) {
+      margin-top: 0;
+      font-size: 14px;
+    }
+
+    @include r(mobile) {
+      margin-top: 0;
+      font-size: 12px;
+    }
+  }
+}
+
+.filter-dropdown {
+  $root: &;
+
+  position: relative;
+  flex-grow: 1;
+
+  // Resets styles of any list
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__close {
+    @include btn-reset;
+    @include cross(15px, $black--design, 2px);
+
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+
+    @include r(tablet) {
+      @include cross(15px, $black--design, 2px);
+    }
+
+    @include r(mobile) {
+      @include cross(9px, $black--design, 1px);
+
+      margin-top: 3px;
+    }
+  }
+
+  &__arrow {
+    @include btn-reset;
+
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid $black;
+    border-right: 2px solid $black;
+    transform: rotate(135deg);
+
+    @include r(tablet) {
+      top: 6px;
+      width: 12px;
+      height: 12px;
+    }
+
+    @include r(mobile) {
+      top: 5px;
+      width: 10px;
+      height: 10px;
+    }
+
+    .dropdown-expanded & {
+      top: 15px;
+      transform: rotate(-45deg);
+
+      @include r(mobile) {
+        top: 9px;
+      }
+    }
+  }
+
+  &__selection {
+    position: relative;
+    display: flex;
+    height: 38px;
+    overflow: hidden;
+    border: 1px solid $grey--light;
+    padding: 0 10px;
+
+    @include r(tablet) {
+      height: 34px;
+    }
+
+    @include r(mobile) {
+      height: 25px;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      padding: 8px 10px 6px;
+      font-size: 18px;
+      font-weight: $f-semibold;
+      text-transform: uppercase;
+      color: $black--design;
+      cursor: pointer;
+      gap: 10px;
+      user-select: none;
+
+      @include r(tablet) {
+        padding: 9px 10px;
+        font-size: 14px;
+        gap: 5px;
+      }
+
+      @include r(mobile) {
+        padding: 5px;
+        gap: 5px;
+        font-size: 12px;
+      }
+    }
+
+    ul,
+    span {
+      flex-grow: 1;
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    // Toggle dropdown icon
+    > .btn {
+      display: flex;
+      align-items: flex-start;
+
+      i {
+        padding: 10px 17px;
+        font-size: 21px;
+        transition: transform 150ms;
+      }
+    }
+  }
+
+  &__hidden-selection-counter {
+    position: absolute;
+    top: 11px;
+    right: 48px;
+    font-size: 16px;
+    font-weight: $f-semibold;
+    line-height: 1;
+
+    @include r(tablet) {
+      top: 9px;
+      right: 35px;
+      font-size: 14px;
+    }
+
+    @include r(mobile) {
+      top: 7px;
+      right: 38px;
+      font-size: 12px;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    display: none;
+    width: 100%;
+    border: 1px solid $grey--light;
+    border-top: none;
+    padding: 15px 20px 20px;
+    background-color: rgba($white, 0.75);
+
+    @include r(tablet) {
+      padding: 15px;
+    }
+
+    @include r(mobile) {
+      padding: 10px;
+    }
+  }
+
+  &__clear-all-btn {
+    @include btn-reset;
+
+    font-size: 18px;
+    font-weight: $f-semibold;
+    color: $black--design;
+    cursor: pointer;
+
+    @include r(tablet) {
+      font-size: 16px;
+    }
+
+    @include r(mobile) {
+      font-size: 14px;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 3px solid $pink;
+    margin: 10px 0 25px;
+
+    @include r(mobile) {
+      margin: 10px 0 15px;
+    }
+  }
+
+  &__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    @include r(mobile) {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      label {
+        position: relative;
+        display: flex;
+        min-height: 20px;
+        padding-left: 30px;
+        font-size: 18px;
+        font-weight: $f-semibold;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @include r(tablet) {
+          font-size: 14px;
+        }
+
+        @include r(mobile) {
+          font-size: 12px;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+        }
+
+        &::after {
+          top: 6px;
+          left: 5px;
+          width: 10px;
+          height: 5px;
+          border-bottom: 2px solid $black--design;
+          border-left: 2px solid $black--design;
+          opacity: 0;
+          visibility: hidden;
+          transform: rotate(-45deg);
+          transition: all $a-short;
+
+          @include r(mobile) {
+            top: 5px;
+          }
+        }
+
+        &::before {
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          border: 2px solid $black--design;
+          border-radius: 3px;
+
+          @include r(mobile) {
+            top: -2px;
+          }
+        }
+      }
+
+      input {
+        display: none;
+
+        &:checked {
+          & + label {
+            &::after {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__all-results {
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: $f-semibold;
+    text-transform: uppercase;
+    color: $black--design;
+    cursor: pointer;
+    user-select: none;
+
+    @include r(tablet) {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+
+    @include r(mobile) {
+      padding: 0 5px;
+      font-size: 12px;
+    }
+  }
+
+  //
+  // Expanded dropdown
+  //
+  &.dropdown-expanded {
+    .filter-dropdown__selection {
+      height: auto;
+      overflow: visible;
+
+      > .btn {
+        i {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    .filter-dropdown__body {
+      display: block;
+    }
+  }
+}

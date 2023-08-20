@@ -1,0 +1,46 @@
+@mixin checkbox-style() {
+  input {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    font-size: 14px;
+    color: $black--design;
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: "";
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      border: 2px solid $black--design;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: 7.2px;
+      display: inline-block;
+      width: 5.4px;
+      height: 11.8px;
+      border-bottom: 1.8px solid #fff;
+      border-right: 1.8px solid #fff;
+      transform: rotate(45deg);
+    }
+  }
+
+  // Shows 'checked' state
+  input:checked + label::before {
+    background-color: $black--design;
+  }
+
+  input:checked + label::after {
+    content: "";
+  }
+}

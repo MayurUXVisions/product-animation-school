@@ -1,0 +1,24 @@
+@import "~styles/config";
+
+.custom-title {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  vertical-align: top;
+  width: 100%;
+
+  h1 {
+    margin: 15px 0;
+  }
+}
+div[class*="container--"] .custom-title .container { padding: 0; }
+
+.custom-highligter {
+  margin-left: 20px;
+  box-decoration-break: clone;
+  line-height: 1.3;
+
+  @include r(mobile-max) {
+    margin-left: 10px;
+  }
+}

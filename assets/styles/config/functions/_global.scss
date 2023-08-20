@@ -1,0 +1,65 @@
+@use "sass:math";
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function contains($list, $var) {
+  $contains: false;
+
+  @each $item in $list {
+    @if $item == $var {
+      $contains: true;
+    }
+  }
+
+  @return $contains;
+}
+
+@function force-px($val) {
+  @return #{strip-unit($val)}px;
+}
+
+@function fluid-width($cols, $gutter) {
+  @return calc((100% / #{$cols}) - #{($gutter / $cols) * ($cols - 1)});
+}
+
+@function aspect-ratio($width, $height, $c-width) {
+  @return #{strip-unit(($height / ($width / (strip-unit($c-width) / 100)))) * 100}#{"%"};
+}
+
+@function calc-gutter($content-width, $screen-width) {
+  $operation1: math.div(($screen-width - $content-width), 2);
+
+  @return #{math.div($operation1, $screen-width) * 100}vw;
+}
+
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - (strip-unit($x0) * strip-unit($x0) - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+//
+// Gets the index number of an array element
+//
+@function get-list-index($name, $list) {
+  @return index($list, $name);
+}
+
+//
+// Gets the array value from its index
+//
+@function get-list-value($index, $list) {
+  @return nth($list, $index);
+}

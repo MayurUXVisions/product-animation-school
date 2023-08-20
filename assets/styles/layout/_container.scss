@@ -1,0 +1,266 @@
+//
+// Container classes, responsive rules set from wider to smaller screens
+// 
+// TODO: Remember to also populate the ACF fields of the container block to make these available within there.
+//
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &,
+  &--default,
+  &--1800 {
+    $content-width: 1800px;
+    $gutter: calc-gutter(1800px, 1920px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(desktop-max) {
+      $content-width: 1600px;
+      $gutter: calc-gutter(1600px, 1600px);
+
+      max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    }
+
+    @include r(desktop-min) {
+      $content-width: 100%;
+      $gutter: calc-gutter(100%, 100%);
+
+      max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    }
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &--1920 {
+    $content-width: 1800px;
+    $gutter: calc-gutter(1800px, 1920px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &--1548 {
+    $content-width: 1548px;
+    $gutter: calc-gutter(1548px, 2560px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &--1280 {
+    $content-width: 1480px;
+    $gutter: calc-gutter(1480px, 1920px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &--1024 {
+    $content-width: 1024px;
+    $gutter: calc-gutter(1024px, 1920px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &--768 {
+    $content-width: 768px;
+    $gutter: calc-gutter(768px, 1920px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &--320 {
+    $content-width: 320px;
+    $gutter: calc-gutter(320px, 1920px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include r(tablet) {
+      max-width: initial;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    @include r(mobile) {
+      max-width: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  //
+  // Container used only for default Gutenberg blocks (text, heading, images...)
+  // rendered via the_content_with_block_containers().
+  //
+  // Please do not re-use it on other places.
+  //
+  //&--wysiwyg {}
+
+  //
+  // Container used only for default Gutenberg Columns block
+  // rendered via the_content_with_block_containers().
+  //
+  // Please do not re-use it on other places.
+  //
+  &--wp-columns {
+    margin: 0;
+
+    .wp-block-columns {
+      margin: 0;
+    }
+  }
+}
+
+.wp-block-group.is-layout-constrained {
+  position: relative;
+  z-index: 1;
+}
+
+.wp-block-group__inner-container {
+  $content-width: 1800px;
+  $gutter: calc-gutter(1800px, 1920px);
+
+  max-width: calc(#{$content-width} + (2 * #{$gutter}));
+  padding-left: $gutter;
+  padding-right: $gutter;
+
+  @include r(desktop-max) {
+    $content-width: 1600px;
+    $gutter: calc-gutter(1600px, 1600px);
+
+    max-width: calc(#{$content-width} + (2 * #{$gutter}));
+  }
+
+  @include r(tablet) {
+    max-width: initial;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include r(mobile) {
+    max-width: initial;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+
+  > div {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.wp-block-spacer {
+  &[style="height:120px"] {
+    @include r(desktop-wide) {
+      height: 60px !important;
+    }
+
+    @include r(laptop-max) {
+      height: 40px !important;
+    }
+
+    @include r(mobile) {
+      height: 30px !important;
+    }
+  }
+
+  &[style="height:80px"] {
+    @include r(laptop-max) {
+      height: 50px !important;
+    }
+
+    @include r(tablet-max) {
+      height: 30px !important;
+    }
+  }
+}

@@ -1,0 +1,323 @@
+@import "~styles/config";
+
+.contact_us {
+  position: relative;
+  z-index: 1;
+  padding: 86px 0 148px;
+  background-color: $yellow;
+
+  @include r(desktop-wide) {
+    padding: 74px 0 90px;
+  }
+
+  @include r(desktop-small) {
+    padding: 82px 0 90px;
+  }
+
+  @include r(laptop-max) {
+    padding: 52px 0 90px;
+  }
+
+  @include r(mobile) {
+    padding: 67px 0 90px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__left {
+      width: 54.35%;
+
+      @include r(tablet-max) {
+        width: 100%;
+        margin-bottom: 55px;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      width: 41%;
+      margin: 0 0 -1.2%;
+      padding: 14px 0 0;
+      font-size: 34px;
+
+      @include r(desktop-max) {
+        font-size: 28px;
+      }
+
+      @include r(desktop-wide) {
+        font-size: 24px;
+      }
+
+      @include r(desktop-small) {
+        font-size: 22px;
+      }
+
+      @include r(tablet-max) {
+        width: 100%;
+        margin: 0;
+        padding: 14px 0;
+      }
+
+      @include r(mobile) {
+        font-size: 16px;
+      }
+
+      a {
+        font-size: inherit;
+        text-transform: none;
+        color: $black--design;
+      }
+
+      p {
+        margin: 0 0 18px;
+        font-size: inherit;
+        line-height: 1.2em;
+
+        @include r(desktop-small) {
+          margin: 0 0 11px;
+        }
+
+        strong {
+          font-family: $proxima;
+          font-weight: $f-heavy;
+        }
+      }
+
+      >div {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    margin: 0 0 76px;
+
+    @include r(desktop-wide) {
+      margin: 0 0 60px;
+    }
+
+    @include r(desktop-small) {
+      margin: 0 0 55px;
+    }
+
+    @include r(tablet-max) {
+      display: none;
+    }
+
+    @include r(mobile) {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__address__info {
+    padding: 66px 0 0;
+
+    @include r(desktop-wide) {
+      padding: 40px 0 0;
+    }
+
+    @include r(laptop-max) {
+      padding: 25px 0 0;
+    }
+
+    p {
+      margin: 0 0 18px;
+
+      @include r(desktop-small) {
+        margin: 0 0 11px;
+      }
+    }
+  }
+
+  &__title {
+    padding-right: 5%;
+
+    @include r(tablet-max) {
+      padding-bottom: 72px;
+      padding-right: 0;
+    }
+
+    h3 {
+      @include r(mobile) {
+        line-height: 1.1em;
+      }
+    }
+  }
+
+  &__form {
+    width: 92.5%;
+    margin: 90px 0 0;
+    padding: 29px 35px 48px;
+    background-color: $blue;
+
+    @include r(desktop-small) {
+      width: 91%;
+      margin: 62px 0 0;
+      padding: 20px;
+    }
+
+    @include r(laptop-max) {
+      width: 96%;
+      margin: 52px 0 0;
+    }
+
+    @include r(tablet-max) {
+      width: 100%;
+      margin: 92px 0 0;
+    }
+
+    @include r(mobile) {
+      padding: 22px 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 19px 26px;
+      font-family: $proxima;
+      font-size: 34px;
+      font-weight: $f-heavy;
+      color: $blue;
+      background-color: $black--design;
+
+      @include r(desktop-max) {
+        font-size: 28px;
+      }
+
+      @include r(desktop-wide) {
+        padding: 14px 27px;
+        font-size: 24px;
+      }
+
+      @include r(desktop-small) {
+        padding: 8px 17px;
+        font-size: 22px;
+      }
+
+      @include r(mobile) {
+        padding: 0 9px;
+        font-size: 16px;
+      }
+    }
+
+    .gform_title {
+      display: none;
+    }
+
+    .gform_wrapper {
+      margin: 64px 0 0;
+
+      @include r(desktop-small) {
+        margin: 37px 0 0;
+      }
+
+      @include r(mobile) {
+        margin: 24px 0 0;
+      }
+    }
+  }
+
+  &__privacy {
+    width: 100%;
+    margin: 94px 0 0;
+    font-size: 24px;
+
+    @include r(desktop-max) {
+      margin: 74px 0 0;
+    }
+
+    @include r(desktop-wide) {
+      margin: 63px 0 0;
+      font-size: 16px;
+    }
+
+    @include r(tablet-max) {
+      display: none;
+    }
+
+    @include r(mobile) {
+      margin: 45px 0 0;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: inherit;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: #000;
+
+      &::after {
+        top: auto !important;
+        bottom: -14px !important;
+        background-color: $black--design !important;
+
+        @include button-style-after;
+
+        @include r(desktop-wide) {
+          bottom: -6px !important;
+        }
+      }
+
+      &:hover {
+        @include button-style-hover;
+      }
+    }
+  }
+}
+
+.contact_mobile {
+  display: none;
+
+  @include r(tablet-max) {
+    display: block;
+  }
+
+  .contact_us__info {
+    @include r(desktop-small) {
+      font-size: 22px;
+    }
+
+    @include r(tablet-max) {
+      display: block;
+      width: 100%;
+    }
+
+    @include r(mobile) {
+      font-size: 16px;
+    }
+
+    a {
+      font-size: inherit;
+      text-transform: none;
+      color: $black--design;
+      word-wrap: break-word;
+
+      @include r(mobile) {
+        letter-spacing: -0.04em;
+      }
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: inherit;
+      line-height: 1.2em;
+
+      @include r(desktop-small) {
+        margin: 0 0 11px;
+      }
+
+      strong {
+        font-family: $proxima;
+        font-weight: $f-heavy;
+      }
+    }
+  }
+}

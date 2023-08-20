@@ -1,0 +1,13 @@
+@mixin admin-bar($base-top-pos: 0) {
+  @at-root #wpadminbar {
+    position: fixed;
+  }
+
+  .admin-bar & {
+    top: $base-top-pos + 31px;
+
+    @media (max-width: 782px) {
+      top: $base-top-pos + 45px;
+    }
+  }
+}

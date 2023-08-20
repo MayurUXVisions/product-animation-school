@@ -1,0 +1,321 @@
+@import "~styles/config";
+
+.staggered-text {
+  position: relative;
+  z-index: 1;
+  padding: 95px 0;
+
+  @include r(desktop-small) {
+    padding: 65px 0;
+  }
+
+  @include r(tablet-max) {
+    padding: 74px 0;
+  }
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    padding-right: 35px;
+
+    @include r(tablet-max) {
+      width: 100%;
+    }
+
+    h2,
+    h1 {
+      margin: 0;
+      padding: 18px 39px;
+      line-height: 0.9;
+      background-color: $black--design;
+      word-break: break-all;
+
+      @include r(desktop-small) {
+        padding: 12px 23px;
+      }
+
+      @include r(tablet-max) {
+        padding: 12px 19px;
+      }
+
+      @include r(mobile) {
+        padding: 10px 13px;
+      }
+
+      &.size1 {
+        font-size: 80px;
+
+        @include r(desktop-max) {
+          font-size: 3.5vw;
+        }
+
+        @include r(desktop-small) {
+          font-size: 4vw;
+        }
+
+        @include r(tablet-max) {
+          font-size: 6vw;
+        }
+
+        @include r(mobile) {
+          font-size: 48px;
+        }
+      }
+
+      &.size2 {
+        font-size: 150px;
+
+        @include r(desktop-max) {
+          font-size: 7vw;
+        }
+
+        @include r(desktop-wide) {
+          font-size: 8vw;
+        }
+
+        @include r(laptop-max) {
+          font-size: 7vw;
+        }
+
+        @include r(tablet-max) {
+          font-size: 6vw;
+        }
+
+        @include r(mobile) {
+          padding: 7px 12px;
+          font-size: 11vw;
+        }
+      }
+
+      &.size3 {
+        font-size: 280px;
+
+        @include r(desktop-max) {
+          font-size: 13vw;
+        }
+
+        @include r(desktop-small) {
+          font-size: 14vw;
+        }
+
+        @include r(tablet-max) {
+          font-size: 12.5vw;
+        }
+
+        @include r(mobile) {
+          margin: -9px 0 0;
+          padding: 3px 13px;
+          font-size: 26vw;
+        }
+      }
+    }
+  }
+
+  &__text-column {
+    width: 50%;
+    padding-top: 176px;
+    padding-left: 0;
+    padding-right: 6%;
+
+    @include r(desktop-max) {
+      padding-top: 12vw;
+    }
+
+    @include r(desktop-small) {
+      padding-top: 9vw;
+      padding-left: 8px;
+    }
+
+    @include r(tablet-max) {
+      width: 100%;
+      padding-right: 10px;
+    }
+
+    @include r(mobile) {
+      padding-top: 65px;
+      padding-left: 0;
+    }
+
+    &.only_title {
+      padding-top: 386px;
+
+      @include r(desktop-max) {
+        padding-top: 19vw;
+      }
+
+      @include r(desktop-small) {
+        padding-top: 20vw;
+      }
+
+      @include r(tablet-max) {
+        padding-top: 85px;
+      }
+
+      @include r(mobile) {
+        padding-top: 66px;
+      }
+
+      .highlighter {
+        margin-top: 0;
+      }
+    }
+
+    h2 {
+      margin-bottom: 108px;
+
+      @include r(desktop-max) {
+        margin-bottom: 6.8vw;
+      }
+
+      @include r(desktop-small) {
+        max-width: 90%;
+      }
+
+      @include r(laptop-max) {
+        max-width: 100%;
+        margin-bottom: 35px;
+      }
+
+      @include r(mobile) {
+        margin-bottom: 45px;
+      }
+    }
+
+    p {
+      margin-bottom: 42px;
+
+      @include r(desktop-small) {
+        margin-bottom: 2vw;
+      }
+
+      @include r(mobile) {
+        margin-bottom: 23px;
+      }
+    }
+
+    &.without_text {
+      padding-top: 400px;
+    }
+  }
+
+  &.blue_theme {
+    background-color: $blue;
+
+    .staggered-text__title-column h2,
+    .staggered-text__title-column h1 {
+      color: $blue;
+    }
+
+    a {
+      color: #000;
+    }
+
+    .highlighter {
+      color: $blue;
+    }
+  }
+
+  &.pink_theme {
+    background-color: $pink;
+
+    .staggered-text__title-column h2,
+    .staggered-text__title-column h1 {
+      color: $pink;
+    }
+
+    .highlighter {
+      color: $pink;
+    }
+
+    a {
+      color: #000;
+    }
+  }
+
+  &.yellow_theme {
+    background-color: $yellow;
+
+    .staggered-text__title-column h2,
+    .staggered-text__title-column h1 {
+      color: $yellow;
+    }
+
+    a {
+      color: #000;
+    }
+
+    .highlighter {
+      color: $yellow;
+    }
+  }
+
+  &.red_theme {
+    background-color: $coral;
+
+    .staggered-text__title-column h2,
+    .staggered-text__title-column h1 {
+      color: $coral;
+    }
+
+    a {
+      color: #000;
+    }
+
+    .highlighter {
+      color: $coral;
+    }
+  }
+
+  &.wide-title {
+    .staggered-text__title-column {
+      width: 58%;
+
+      @include r(tablet-max) {
+        width: 100%;
+      }
+    }
+
+    .staggered-text__text-column {
+      width: 42%;
+      padding-right: 0;
+
+      @include r(tablet-max) {
+        width: 100%;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+.highlighter {
+  display: inline-block;
+  padding: 21px;
+  font-size: 65px;
+  font-weight: $f-heavy;
+  line-height: 1;
+  text-transform: uppercase;
+  background: $black--design;
+
+  @include r(desktop-wide) {
+    font-size: 39px;
+  }
+
+  @include r(desktop-small) {
+    margin-top: 31px;
+    padding: 11px 18px;
+    font-size: 26 px;
+  }
+
+  @include r(mobile) {
+    margin-top: 10px;
+    padding: 3px 11px;
+    font-size: 16px;
+  }
+}

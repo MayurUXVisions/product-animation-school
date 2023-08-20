@@ -1,0 +1,263 @@
+@import "~styles/config";
+
+.sub-nav {
+  position: relative;
+  z-index: 1;
+  padding: 72px 0 0;
+  background-color: $pink;
+
+  @include r(desktop-small) {
+    padding: 49px 0 7px;
+  }
+
+  @include r(mobile) {
+    z-index: 99;
+    padding: 29px 0 0;
+  }
+
+  &__main {
+    position: relative;
+  }
+
+  &.stick {
+    position: static;
+    z-index: 1;
+
+    .sub-nav__links {
+      position: fixed;
+      top: 0;
+      z-index: 91;
+
+      @include r(mobile) {
+        z-index: 3;
+      }
+    }
+  }
+
+  #sticky-anchor {
+    position: relative;
+    min-height: 77px;
+
+    @include r(desktop-small) {
+      min-height: 44px;
+    }
+  }
+
+  &__hambuger {
+    display: none;
+
+    @include r(mobile) {
+      position: relative;
+      display: block;
+      font-size: 14px;
+      font-weight: $f-heavy;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $black--design;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        background-image: url("~img/angle_down_icon.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 73px;
+    text-transform: uppercase;
+
+    @include r(desktop-small) {
+      margin-bottom: 39px;
+    }
+
+    @include r(mobile) {
+      margin-bottom: 23px;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      color: $purple;
+    }
+  }
+
+  &__links {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 26px 0;
+    background-color: $pink;
+
+    @include r(desktop-max) {
+      padding: 17px 0;
+    }
+
+    @include r(desktop-wide) {
+      padding: 13px 0 14px;
+    }
+
+    @include r(mobile) {
+      padding: 10px 0;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      &.submenu-list.disable {
+        @include r(mobile) {
+          display: block;
+        }
+      }
+
+      @include r(mobile) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        width: 599px;
+        max-width: 100%;
+        overflow: hidden;
+        margin: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $white;
+        }
+      }
+
+      li {
+        margin-bottom: 0;
+        padding-right: 73px;
+        text-transform: uppercase;
+
+        @include r(desktop-small) {
+          padding-right: 35px;
+        }
+
+        @include r(tablet-max) {
+          padding-right: 25px;
+        }
+
+        @include r(mobile) {
+          position: relative;
+          display: block;
+          width: 100%;
+          padding: 0;
+        }
+
+        a {
+          position: relative;
+          font-size: 18px;
+          font-weight: $f-heavy;
+          text-decoration: none;
+          color: $black--design;
+
+          @include r(desktop-small) {
+            font-size: 14px;
+          }
+
+          @include r(mobile) {
+            display: inline-block;
+            width: 100%;
+            padding: 0;
+            font-size: 12px;
+          }
+
+          span {
+            @include r(mobile) {
+              position: relative;
+              display: inline-block;
+              padding: 14px 0;
+            }
+
+            &::after {
+              background-color: transparent !important;
+
+              @include button-style-after;
+
+              @include r(mobile) {
+                top: 80%;
+                background-color: $pink;
+              }
+            }
+
+            &::before {
+              width: 30px !important;
+              background-color: $purple !important;
+
+              @include button-style-before;
+
+              @include r(mobile) {
+                top: 80%;
+                width: 100% !important;
+                background-color: $pink !important;
+              }
+            }
+          }
+
+          &:hover {
+            span {
+              @include button-style-hover;
+            }
+          }
+        }
+
+        &.active {
+          @include r(mobile) {
+            display: none;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: -200px;
+              right: -200px;
+              background-color: $pink;
+            }
+          }
+
+          a {
+            span {
+              &::after {
+                background-color: $purple !important;
+                opacity: 1;
+                transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                transform-origin: right;
+
+                @include r(mobile) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#readout {
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+}

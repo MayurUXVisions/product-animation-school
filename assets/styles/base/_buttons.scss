@@ -1,0 +1,262 @@
+@use "sass:map";
+
+.btn {
+  $root: &;
+  $color-variations: (
+    "dark-coral": (
+      "line": $coral,
+      "text": $black--design
+    ),
+    "dark-yellow": (
+      "line": $yellow,
+      "text": $black--design
+    ),
+    "dark-pink": (
+      "line": $pink,
+      "text": $black--design
+    ),
+    "dark-blue": (
+      "line": $blue,
+      "text": $black--design
+    ),
+    "dark-purple": (
+      "line": $purple,
+      "text": $black--design
+    ),
+    "light-coral": (
+      "line": $coral,
+      "text": $white
+    ),
+    "light-yellow": (
+      "line": $yellow,
+      "text": $white
+    ),
+    "light-pink": (
+      "line": $pink,
+      "text": $white
+    ),
+    "light-blue": (
+      "line": $blue,
+      "text": $white
+    ),
+    "light-purple": (
+      "line": $purple,
+      "text": $white
+    ),
+    "black": (
+      "line": $black--design,
+      "text": $black--design
+    )
+    // Add other colour variations below
+  );
+
+  @include btn-reset;
+
+  position: relative;
+  overflow: hidden;
+  padding: 8px 2px 12px;
+  font-family: $base-font-family;
+  font-size: 24px;
+  font-weight: $f-bold;
+  white-space: nowrap;
+  line-height: 29px;
+  text-align: left;
+  text-transform: uppercase;
+
+  &--dbl-line {
+    max-width: 210px;
+    white-space: normal;
+  }
+
+  @include r(mobile) {
+    max-width: 210px;
+    padding: 8px 2px 5px;
+    font-size: 14px;
+  }
+
+  @each $name, $values in $color-variations {
+    $color--text: map.get($values, "text");
+    $color--line: map.get($values, "line");
+
+    &.btn--#{$name} {
+      color: $color--text;
+
+      &::before,
+      &::after { background: $color--line; }
+    }
+  }
+
+  &::before,
+  &::after {
+    transition: ease-in-out $a-medium;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: $yellow;
+
+    @include r(mobile) {
+      height: 4px;
+    }
+  }
+
+  &:hover {
+    &::before {
+      width: 0;
+    }
+  }
+}
+
+.donate__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 19px 21px;
+  font-family: $proxima;
+  font-size: 38px;
+  font-weight: $f-heavy;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $black--design;
+  background-color: $blue;
+  transition: 0.3s all;
+
+  @include r(desktop-max) {
+    padding: 12px 18px;
+    font-size: 31px;
+  }
+
+  @include r(desktop-wide) {
+    padding: 10px 20px;
+    font-size: 23px;
+  }
+
+  @include r(mobile-max) {
+    padding: 5px 12px;
+    font-size: 18px;
+  }
+
+  @include r(mobile-small) {
+    padding: 0 7px;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background-color: $coral;
+  }
+
+  span {
+    display: flex;
+    padding-right: 11px;
+
+    @include r(desktop-wide) {
+      padding-right: 8px;
+    }
+
+    @include r(mobile-max) {
+      padding-right: 4px;
+    }
+  }
+
+  img {
+    @include r(desktop-max) {
+      width: 35px;
+    }
+
+    @include r(desktop-wide) {
+      width: 28px;
+    }
+
+    @include r(mobile-max) {
+      width: 20px;
+    }
+
+    @include r(mobile) {
+      width: 14px;
+    }
+  }
+}
+
+.link-btn {
+  position: relative;
+  width: auto;
+  padding: 0 0 3px;
+  font-family: $proxima;
+  font-size: 24px;
+  font-weight: $f-heavy;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $white;
+
+  @include r(desktop-max) {
+    font-size: 21px;
+  }
+
+  @include r(desktop-wide) {
+    font-size: 16px;
+  }
+
+  @include r(mobile) {
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  &.link-black {
+    color: $black--design;
+  }
+
+  &.black-link {
+    color: $black--design;
+
+    &::after,
+    &::before {
+      background-color: $black--design;
+    }
+  }
+
+  &.blue-link {
+    &::after,
+    &::before {
+      background-color: $blue;
+    }
+  }
+
+  &.pink-link {
+    &::after,
+    &::before {
+      background-color: $pink !important;
+    }
+  }
+
+  &.red-link {
+    &::after,
+    &::before {
+      background-color: $coral;
+    }
+  }
+
+  &::after {
+    background-color: $yellow;
+
+    @include button-style-after;
+  }
+
+  &::before {
+    background-color: $yellow;
+
+    @include button-style-before;
+  }
+
+  &:hover {
+    @include button-style-hover;
+  }
+}

@@ -1,0 +1,94 @@
+// -----------------------------------------------------------------------------
+// FEED - common elements only. Any specific feed should have its own .scss file
+// -----------------------------------------------------------------------------
+
+@import "~styles/config";
+
+.feed {
+  position: relative;
+  z-index: 1;
+  padding-top: 60px;
+  padding-bottom: 190px;
+  background-color: $white;
+
+  @include r(laptop) {
+    padding-top: 45px;
+    padding-bottom: 140px;
+  }
+
+  @include r(mobile) {
+    padding-top: 30px;
+    padding-bottom: 110px;
+  }
+
+  &--loading {
+    min-height: 100vh;
+
+    &::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: $z-index-page-loading-spinner;
+      background-color: rgba(#fff, 0.6);
+    }
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: $z-index-page-loading-spinner + 1;
+      width: 150px;
+      height: 150px;
+      background-image: url("~img/icons/loading-icon.svg");
+      background-size: 150px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  //
+  // Results
+  //
+  .feed-results {
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  //
+  // Pagination
+  //
+  .load-previous-page-btn,
+  .load-next-page-btn {
+    display: block;
+    max-width: none;
+  }
+
+  .load-next-page-btn {
+    margin: 215px auto 0;
+
+    @include r(laptop, tablet) {
+      margin: 140px auto 0;
+    }
+
+    @include r(mobile) {
+      margin: 95px auto 0;
+    }
+  }
+
+  .load-previous-page-btn {
+    margin: 0 auto 215px;
+
+    @include r(laptop, tablet) {
+      margin: 0 auto 140px;
+    }
+
+    @include r(mobile) {
+      margin: 0 auto 95px;
+    }
+  }
+}

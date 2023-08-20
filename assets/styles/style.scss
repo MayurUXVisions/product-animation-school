@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// ARCHITECTURE - please do not make changes here
+// -----------------------------------------------------------------------------
+
+// Config (variables, functions and mixins. These files should not produce any css on their own.)
+@import "config";
+
+// Vendor (third-party stuff not imported via NPM/Yarn)
+@import "vendor";
+
+// Vendor overrides
+@import "vendor-overrides";
+
+// Base (i.e. typography, icons, helpers, buttons, links...)
+@import "base";
+
+// Layout
+@import "layout";
+
+// Components (include global components (i.e. navigation, forms...).
+// All other components' scss should be included in their .js file)
+@import "components";
+
+// Blocks (only include global ones (i.e. hero headers).
+// All other blocks' scss should be included in their .js file)
+@import "blocks";
+
+// Templates (template/page specific styles, should be included in .js files only)
+// do not import nothing here
+
+// Hacks (temporary fixes go here)
+@import "hacks";
+
+// Debug (checks HTML for common errors and highlights them)
+@import "debug";

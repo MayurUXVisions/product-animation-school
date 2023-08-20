@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// ADMIN - styles loaded in Admin only
+// -----------------------------------------------------------------------------
+
+.wp-block {
+  max-width: 1200px;
+}
+
+.acf-block-preview {
+  //
+  // Styles container block so it stands out from other blocks
+  //
+  .container-block {
+    position: relative;
+    border: 1px solid #adb2ad;
+    padding: 10px 20px;
+
+    &::before {
+      content: "Container Block (Preview)";
+      position: absolute;
+      top: -13px;
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 12px;
+      color: #fff;
+      background-color: #000;
+    }
+  }
+}

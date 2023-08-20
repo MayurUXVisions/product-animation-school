@@ -1,0 +1,195 @@
+@import "~styles/config";
+
+.cta-buttons {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+  padding: 90px 0;
+
+  @include r(desktop-small) {
+    padding: 70px 0;
+  }
+
+  @include r(tablet-max) {
+    padding: 45px 0;
+  }
+
+  &__title {
+    max-width: 50%;
+    margin-bottom: 135px;
+
+    @include r(desktop-max) {
+      margin-bottom: 6vw;
+    }
+
+    @include r(desktop) {
+      max-width: 630px;
+      margin-bottom: 91px;
+    }
+
+    @include r(tablet-max) {
+      margin-bottom: 51px;
+    }
+
+    h3 {
+      font-weight: $f-heavy;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__buttons-center {
+    justify-content: center;
+
+    .donate__btn {
+      width: auto !important;
+    }
+  }
+
+  &.blue_theme {
+    background-color: $blue;
+
+    .donate__btn {
+      color: $blue;
+
+      &::after,
+      &::before {
+        background-color: $blue !important;
+      }
+    }
+  }
+
+  &.pink_theme {
+    background-color: $pink;
+
+    .donate__btn {
+      color: $pink;
+
+      &::after,
+      &::before {
+        background-color: $pink !important;
+      }
+    }
+  }
+
+  &.yellow_theme {
+    background-color: $yellow;
+
+    .donate__btn {
+      color: $yellow;
+
+      &::after,
+      &::before {
+        background-color: $yellow !important;
+      }
+    }
+  }
+
+  &.red_theme {
+    background-color: $coral;
+
+    .donate__btn {
+      color: $coral;
+
+      &::after,
+      &::before {
+        background-color: $coral !important;
+      }
+    }
+  }
+
+  .donate__btn {
+    position: relative;
+    justify-content: flex-start;
+    width: 32%;
+    min-width: 32%;
+    margin-bottom: 12px;
+    margin-right: 1%;
+    padding: 23px 70px 23px 43px;
+    font-size: 64px;
+    line-height: 0.9;
+    color: $blue;
+    background-color: $black--design;
+
+    b {
+      width: 80%;
+      font-weight: 800;
+    }
+
+    @include r(desktop-max) {
+      justify-content: flex-start;
+      width: 32%;
+      margin-right: 1%;
+      padding: 18px 20px 17px 43px;
+      font-size: 2.7vw;
+    }
+
+    @include r(desktop) {
+      padding: 10px 20px 12px 43px;
+      font-size: 3vw;
+    }
+
+    @include r(laptop-max) {
+      padding: 10px 20px 12px 25px;
+    }
+
+    @include r(mobile-max) {
+      width: 100%;
+      min-width: 100%;
+      margin-bottom: 14px;
+      padding: 19px 20px 16px 25px;
+      font-size: 26px;
+    }
+
+    span {
+      padding-right: 41px;
+
+      @include r(desktop-max) {
+        padding-right: 2vw;
+      }
+
+      @include r(mobile) {
+        padding-right: 28px;
+      }
+    }
+
+    img {
+      width: 102px;
+
+      @include r(desktop-max) {
+        width: 3.5vw;
+      }
+
+      @include r(desktop) {
+        width: 5.5vw;
+      }
+
+      @include r(mobile) {
+        width: 47px;
+      }
+    }
+
+    &::after {
+      top: auto !important;
+      background-color: $black--design;
+
+      @include button-style-after;
+    }
+
+    &::before {
+      top: auto !important;
+      width: 40% !important;
+      background-color: $black--design;
+
+      @include button-style-before;
+    }
+
+    &:hover {
+      @include button-style-hover;
+    }
+  }
+}

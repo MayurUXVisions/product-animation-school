@@ -1,0 +1,559 @@
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 35px;
+  color: $white;
+  background-color: $black--design;
+
+  @include r(mobile-max) {
+    padding: 0 0 20px;
+  }
+
+  .footer-newsletter {
+    margin-top: -66px;
+    padding: 56px;
+    color: $black--design;
+    background-color: $yellow;
+
+    @include r(desktop-max) {
+      padding: 33px 50px 48px;
+    }
+
+    @include r(desktop-wide) {
+      padding: 31px 45px 45px;
+    }
+
+    @include r(desktop-small) {
+      margin-top: -44px;
+    }
+
+    @include r(tablet) {
+      padding: 21px 26px 43px;
+    }
+
+    @include r(mobile-max) {
+      padding: 28px 29px 38px 19px;
+    }
+
+    br {
+      display: none;
+
+      @include r(mobile) {
+        display: block;
+      }
+    }
+
+    h2 {
+      margin-bottom: 0;
+
+      @include r(desktop-wide) {
+        margin-bottom: 5px;
+      }
+
+      @include r(mobile) {
+        max-width: 230px;
+      }
+    }
+
+    .h1 {
+      @include r(mobile-max) {
+        font-size: 32px;
+      }
+    }
+
+    .highligher {
+      margin-bottom: 55px;
+
+      @include r(desktop-max) {
+        margin-bottom: 42px;
+      }
+
+      @include r(desktop-wide) {
+        margin-bottom: 35px;
+      }
+
+      @include r(tablet) {
+        margin-bottom: 28px;
+      }
+
+      @include r(mobile-max) {
+        margin-bottom: 53px;
+      }
+    }
+
+    .footer_newsletter_form {
+      margin-top: 226px;
+
+      @include r(desktop-max) {
+        margin-top: 184px;
+      }
+
+      @include r(desktop-wide) {
+        margin-top: 154px;
+      }
+
+      @include r(mobile-max) {
+        margin-top: 74px;
+      }
+
+      h4 {
+        margin-bottom: 27px;
+
+        @include r(desktop-wide) {
+          margin-bottom: 8px;
+        }
+
+        @include r(mobile-max) {
+          margin-bottom: 11px;
+        }
+      }
+
+      .newsletter_form {
+        width: 100%;
+        margin-top: 0;
+
+        input[type="email"] {
+          width: 863px;
+          max-width: 100%;
+          height: 32px;
+          border: 0;
+          border-bottom: 1px solid $black--design;
+          border-radius: 0;
+          margin-top: 15px;
+          margin-right: 86px;
+          padding: 0;
+          font-size: 18px;
+          font-weight: $f-bold;
+          background-color: transparent;
+
+          @include r(desktop-wide) {
+            width: 573px;
+            margin-top: 7px;
+            margin-right: 61px;
+            font-size: 16px;
+          }
+
+          @include r(tablet) {
+            width: 60vw;
+          }
+
+          @include r(mobile-max) {
+            width: 100%;
+            margin-top: 0;
+            margin-right: 0;
+            font-size: 12px;
+          }
+
+          &::placeholder {
+            color: $black--design !important;
+            opacity: 0.6 !important;
+          }
+        }
+
+        .gfield--type-submit {
+          position: relative;
+
+          @include r(mobile-max) {
+            margin-top: 12px;
+            margin-bottom: 0;
+            font-size: 12px;
+          }
+
+          &::after {
+            top: auto !important;
+            background-color: $blue !important;
+
+            @include button-style-after;
+          }
+
+          &:hover {
+            @include button-style-hover;
+          }
+        }
+
+        .gform_wrapper.gravity-theme {
+          .gform_validation_errors {
+            margin: 0;
+            padding: 0 !important;
+
+            h2.hide_summary {
+              max-width: 100%;
+              font-size: 14px !important;
+
+              @include r(mobile-max) {
+                font-size: 12px !important;
+                line-height: 1.1;
+              }
+            }
+          }
+
+          .gform_footer {
+            margin: 0 !important;
+          }
+
+          .gfield {
+            margin-bottom: 0;
+          }
+
+          form {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+
+        .gfield--type-email {
+          @include r(mobile-max) {
+            width: 100% !important;
+            margin: 0;
+          }
+        }
+
+        input[type="submit"],
+        .gform-button {
+          border: 0;
+          padding: 0;
+          font-size: 24px;
+          font-weight: $f-bold;
+          line-height: 47px;
+          text-transform: uppercase;
+          color: $black;
+          background-color: transparent;
+          cursor: pointer;
+
+          @include r(desktop-wide) {
+            font-size: 16px;
+            line-height: 40px;
+          }
+
+          @include r(mobile-max) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .hidden_label label {
+        display: none;
+      }
+
+      .gform_fields {
+        display: flex;
+        grid-column-gap: 0;
+
+        @include r(mobile-max) {
+          grid-row-gap: 0;
+          flex-wrap: wrap;
+        }
+      }
+
+      .gfield {
+        width: auto;
+      }
+
+      .gform_submission_error {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+      }
+
+      .validation_message {
+        position: absolute;
+        width: auto;
+        margin-top: 4px;
+        font-size: 14px !important;
+        font-weight: normal;
+        color: red;
+
+        @include r(mobile-max) {
+          position: relative;
+          font-size: 12px !important;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+
+  .footer-main {
+    margin-top: 95px;
+
+    @include r(desktop-max) {
+      margin-top: 79px;
+    }
+
+    @include r(desktop-wide) {
+      margin-top: 59px;
+    }
+
+    @include r(mobile-max) {
+      margin-top: 46px;
+    }
+
+    .footer_main_top {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 214px;
+
+      @include r(desktop-max) {
+        margin-bottom: 179px;
+      }
+
+      @include r(desktop-wide) {
+        margin-bottom: 143px;
+      }
+
+      @include r(tablet-max) {
+        margin-bottom: 120px;
+      }
+
+      .social {
+        width: 38%;
+
+        @include r(laptop-max) {
+          width: 34%;
+        }
+
+        @include r(tablet-max) {
+          width: 100%;
+          margin-bottom: 35px;
+        }
+
+        h2 {
+          margin-bottom: 0;
+          text-transform: uppercase;
+          color: $white;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 30px 0 0;
+          padding: 0;
+
+          @include r(desktop-max) {
+            margin: 22px 0 0;
+          }
+
+          @include r(mobile-max) {
+            margin: 18px 0 0;
+          }
+
+          li {
+            margin-right: 22px;
+            list-style-type: none;
+
+            @include r(desktop-wide) {
+              margin-right: 13px;
+            }
+
+            @include r(mobile-max) {
+              margin-right: 8px;
+            }
+
+            img {
+              width: 50px;
+
+              @include r(desktop-max) {
+                width: 40px;
+              }
+
+              @include r(desktop-wide) {
+                width: 33px;
+              }
+
+              @include r(mobile-max) {
+                width: 23px;
+              }
+            }
+
+            a {
+              &:hover {
+                img {
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .footer-menu {
+        width: 49%;
+        padding-top: 8px;
+
+        @include r(laptop-max) {
+          width: 51%;
+        }
+
+        @include r(tablet-max) {
+          width: 84%;
+        }
+
+        @include r(mobile-max) {
+          width: 100%;
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+          columns: 3;
+
+          @include r(mobile-max) {
+            columns: 2;
+          }
+
+          li {
+            display: flex;
+            padding-bottom: 43px;
+            list-style-type: none;
+            font-family: $proxima;
+            font-weight: $f-bold;
+            text-transform: uppercase;
+
+            @include r(desktop-max) {
+              padding-bottom: 34px;
+            }
+
+            @include r(desktop-wide) {
+              padding-bottom: 23px;
+            }
+
+            @include r(mobile-max) {
+              padding-bottom: 10px;
+            }
+
+            a {
+              text-decoration: none;
+              color: $white;
+
+              &:hover {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+
+      .fr-logo {
+        width: 12%;
+        padding-top: 10px;
+
+        @include r(laptop-max) {
+          width: 14%;
+        }
+
+        @include r(tablet-max) {
+          width: 16%;
+        }
+
+        @include r(mobile-max) {
+          width: 100%;
+          padding-top: 26px;
+        }
+
+        img {
+          @include r(mobile-max) {
+            max-width: 95px;
+          }
+        }
+      }
+    }
+
+    .footer_main_bottom {
+      width: 100%;
+
+      .footer-logo {
+        width: 100%;
+        margin-bottom: 62px;
+
+        @include r(desktop-max) {
+          margin-bottom: 50px;
+        }
+
+        @include r(desktop-wide) {
+          margin-bottom: 41px;
+        }
+
+        @include r(mobile-max) {
+          margin-bottom: 27px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .footer-address {
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: $f-medium;
+        color: $white;
+
+        p {
+          margin-top: 0;
+          margin-bottom: 10px;
+          margin-right: 59px;
+          font-size: 15px;
+          font-weight: $f-bold;
+          color: $white;
+
+          @include r(desktop-max) {
+            margin-right: 40px;
+            font-size: 10px;
+            font-weight: $f-semibold;
+            line-height: 11px;
+          }
+
+          @include r(laptop-max) {
+            margin-bottom: 7px;
+            margin-right: 30px;
+            font-size: 8px;
+          }
+
+          @include r(tablet-max) {
+            width: 100%;
+            margin-bottom: 4px;
+            margin-right: 0;
+            font-size: 10px;
+          }
+
+          @include r(mobile-small) {
+            font-size: 2.5vw;
+            font-weight: 500;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: $white;
+
+          img {
+            transition: 0.3s all;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          @include r(mobile-max) {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.highligher {
+  display: inline-block;
+  padding: 11px 26px;
+  color: $yellow;
+  background-color: $black--design;
+
+  @include r(desktop-wide) {
+    padding: 14px;
+  }
+
+  @include r(mobile-max) {
+    padding: 8px 9px;
+  }
+}

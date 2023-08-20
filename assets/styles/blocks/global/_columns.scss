@@ -1,0 +1,17 @@
+.wp-block-columns {
+  gap: 160px;
+
+  @include r(mobile, tablet) {
+    flex-wrap: wrap !important;
+    gap: 40px;
+
+    .wp-block-column {
+      flex-basis: 100% !important;
+      flex-grow: 1;
+    }
+  }
+
+  @include r(mobile) {
+    gap: 20px;
+  }
+}

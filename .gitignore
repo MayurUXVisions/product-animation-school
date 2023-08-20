@@ -1,0 +1,43 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+web/app/uploads-webpc/
+web/app/.htaccess
+!web/app/uploads/.gitkeep
+web/app/themes/*/.tmp/jscache/
+web/app/themes/*/node_modules
+web/app/themes/*/.sass-cache
+web/app/updraft/*
+config/backup
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+/log/
+log/
+node_modules
+web/stats.html
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+web/app/*-backup-*.sql*
+.DS_Store
+yarn-error.log
+*.sql

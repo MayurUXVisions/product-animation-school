@@ -1,0 +1,11 @@
+//
+// Sets typography rules to any element that includes this mixin.
+// Useful to set the base font style for the project.
+//
+@mixin normalised-text {
+  @each $property in $normalised-text-properties {
+    $index: get-list-index($property, $normalised-text-properties);
+
+    #{$property}: get-list-value($index, $normalised-text-values);
+  }
+}

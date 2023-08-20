@@ -1,0 +1,115 @@
+@import "~styles/config";
+
+.plain-hero {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-position: center center;
+  background-size: cover;
+
+  &__spacer {
+    position: relative;
+    height: 250px;
+
+    @include r(desktop-max) {
+      height: 220px;
+    }
+
+    @include r(desktop-wide) {
+      height: 190px;
+    }
+
+    @include r(desktop-small) {
+      height: 157px;
+    }
+
+    @include r(mobile) {
+      height: 69px;
+    }
+
+    &.purple_theme {
+      background-color: $purple;
+    }
+
+    &.yellow_theme {
+      background-color: $yellow;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 58px;
+    text-transform: uppercase;
+
+    @include r(desktop-max) {
+      padding-bottom: 20px;
+    }
+
+    @include r(desktop-wide) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 10px;
+
+    @include r(desktop-small) {
+      margin-bottom: 5px;
+    }
+
+    @include r(mobile) {
+      margin-bottom: 7px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+      margin-right: 12px;
+      padding: 16px 24px;
+      font-size: 24px;
+      font-weight: $f-heavy;
+      color: $white;
+      background-color: $black--design;
+
+      @include r(desktop-small) {
+        padding: 7px 15px;
+        font-size: 16px;
+      }
+
+      @include r(mobile) {
+        padding: 5px 10px;
+        font-size: 14px;
+        line-height: 1.1;
+      }
+    }
+  }
+
+  &.purple_theme {
+    background-color: $purple;
+
+    .plain-hero__tags {
+      label {
+        color: $black--design;
+        background-color: $pink;
+      }
+    }
+
+    h1 {
+      color: $pink;
+    }
+  }
+
+  &.yellow_theme {
+    background-color: $yellow;
+
+    .plain-hero__tags {
+      label {
+        color: $yellow;
+      }
+    }
+  }
+}
